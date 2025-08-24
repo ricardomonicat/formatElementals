@@ -8,6 +8,16 @@ Echo:
   resource_type: cpu
   role: business_action
   sync: sync
+Concat:
+  class: ConcatFunction
+  description: Concatenate two texts
+  duration: short
+  enabled: true
+  module: elementals.examples.concat
+  name: Concat
+  resource_type: cpu
+  role: business_action
+  sync: sync
 Multiply:
   class: MultiplyFunction
   description: Multiply two numbers and return product
