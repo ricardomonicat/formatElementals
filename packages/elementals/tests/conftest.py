@@ -3,6 +3,8 @@ import os
 import sys
 
 HERE = os.path.dirname(__file__)
-SRC = os.path.abspath(os.path.join(HERE, "..", "src"))
-if SRC not in sys.path:
-    sys.path.insert(0, SRC)
+EL_SRC = os.path.abspath(os.path.join(HERE, "..", "src"))
+CFG_SRC = os.path.abspath(os.path.join(HERE, "..", "..", "configfuncs", "src"))
+for p in (EL_SRC, CFG_SRC):
+    if p not in sys.path:
+        sys.path.insert(0, p)

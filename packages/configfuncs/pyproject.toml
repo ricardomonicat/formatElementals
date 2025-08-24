@@ -1,0 +1,15 @@
+[project]
+name = "configfuncs"
+version = "0.1.0"
+description = "Configuration package for elemental functions"
+requires-python = ">=3.10"
+authors = [{ name = "Ricardo Monicat" }]
+license = { text = "Proprietary" }
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=70.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

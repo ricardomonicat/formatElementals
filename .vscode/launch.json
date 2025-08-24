@@ -8,7 +8,7 @@
       "module": "pytest",
       "args": ["-q", "-s", "${file}"],
       "console": "integratedTerminal",
-      "env": { "PYTHONPATH": "packages/elementals/src" },
+  "env": { "PYTHONPATH": "packages/elementals/src;packages/configfuncs/src" },
       "justMyCode": true
     },
     {
@@ -18,7 +18,7 @@
       "module": "pytest",
       "args": ["-q", "-s", "${file}::${selectedText}"],
       "console": "integratedTerminal",
-      "env": { "PYTHONPATH": "packages/elementals/src" },
+  "env": { "PYTHONPATH": "packages/elementals/src;packages/configfuncs/src" },
       "justMyCode": true
     },
     {
@@ -28,7 +28,7 @@
       "module": "pytest",
       "args": ["-q", "-s", "packages/elementals/tests/test_multiply.py"],
       "console": "integratedTerminal",
-      "env": { "PYTHONPATH": "packages/elementals/src" },
+  "env": { "PYTHONPATH": "packages/elementals/src;packages/configfuncs/src" },
       "justMyCode": true
     }
   ]

@@ -1,10 +1,10 @@
 from typing import Any, Dict, Optional
-from datetime import datetime
+from datetime import datetime, timezone
 from pydantic import BaseModel, Field
 
 class Meta(BaseModel):
     call_id: Optional[str] = None
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     config: Dict[str, Any] = {}
 
 class ProcessInfo(BaseModel):
