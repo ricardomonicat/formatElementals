@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug: pytest current file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q", "-s", "${file}"],
+      "console": "integratedTerminal",
+      "env": { "PYTHONPATH": "packages/elementals/src" },
+      "justMyCode": true
+    },
+    {
+      "name": "Debug: pytest test at selection",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q", "-s", "${file}::${selectedText}"],
+      "console": "integratedTerminal",
+      "env": { "PYTHONPATH": "packages/elementals/src" },
+      "justMyCode": true
+    },
+    {
+      "name": "Debug: pytest multiply tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q", "-s", "packages/elementals/tests/test_multiply.py"],
+      "console": "integratedTerminal",
+      "env": { "PYTHONPATH": "packages/elementals/src" },
+      "justMyCode": true
+    }
+  ]
+}

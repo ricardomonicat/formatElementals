@@ -1,0 +1,27 @@
+[project]
+name = "elementals"
+version = "0.1.0"
+description = "Elementals function framework (English-first refactor)"
+requires-python = ">=3.10"
+authors = [{ name = "Ricardo Monicat" }]
+license = { text = "Proprietary" }
+dependencies = ["pydantic>=2.4", "typing-extensions>=4.7"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: Other/Proprietary License",
+  "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+dev = []
+
+[build-system]
+requires = ["setuptools>=70.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
