@@ -2,7 +2,6 @@ from typing import Any, Dict
 from ..base import ElementalFunction, FunctionCharacteristics
 from ..enums import RoleInProcess, SyncType, ResourceType, DurationClass
 from ..params import ElementalParams
-from ..responses import ElementalResponse
 from configfuncs.loader import load_config
 
 class MultiplyFunction(ElementalFunction[Dict[str, Any]]):
