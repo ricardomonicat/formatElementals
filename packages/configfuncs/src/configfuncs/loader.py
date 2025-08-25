@@ -1,22 +1,32 @@
+
 from importlib import import_module
 from pathlib import Path
 from typing import Any, Dict
 import yaml
+import os
 
 
 def load_config(path: str | Path | None = None) -> Dict[str, Any]:
     """Load the configFunctions.yaml as a dict.
 
-    If path is None, loads from the package data next to this module.
+    If path is None, loads from the customerfunctions package directory.
     """
-    p = Path(path) if path else Path(__file__).with_name("configFunctions.yaml")
-    with p.open("r", encoding="utf-8") as f:
-        return yaml.safe_load(f) or {}
+    # Always load configFunctions.yaml from the root of the customerfunctions package (sibling to tasksFormats)
+    current = Path(__file__).resolve()
+    # Traverse up until we find the workspace root (contains both tasksFormats and customerfunctions)
+    for parent in current.parents:
+        if (parent / "customerfunctions" / "configFunctions.yaml").exists():
+            yaml_path = parent / "customerfunctions" / "configFunctions.yaml"
+            break
+    else:
+        raise FileNotFoundError("configFunctions.yaml not found in any parent directory's customerfunctions folder")
+    with open(yaml_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 def resolve_callable(entry: Dict[str, Any]):
     """Given an entry with module and class, import and return the class."""
-    mod = import_module(entry["module"])
+    mod = import_module(entry["classModule"])
     return getattr(mod, entry["class"])  # type: ignore[no-any-return]
 
 

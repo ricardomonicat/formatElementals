@@ -2,39 +2,3 @@ Echo:
   class: EchoFunction
   description: Echo input params
   duration: short
-  enabled: true
-  module: elementals.examples.echo
-  name: Echo
-  resource_type: cpu
-  role: business_action
-  sync: sync
-Concat:
-  class: ConcatFunction
-  description: Concatenate two texts
-  duration: short
-  enabled: true
-  module: elementals.examples.concat
-  name: Concat
-  resource_type: cpu
-  role: business_action
-  sync: sync
-Multiply:
-  class: MultiplyFunction
-  description: Multiply two numbers and return product
-  duration: short
-  enabled: true
-  module: elementals.examples.multiply
-  name: Multiply
-  resource_type: cpu
-  role: business_action
-  sync: sync
-Sum:
-  class: SumFunction
-  description: Sum two numbers
-  duration: short
-  enabled: true
-  module: elementals.examples.sum
-  name: Sum
-  resource_type: cpu
-  role: business_action
-  sync: sync

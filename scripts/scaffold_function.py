@@ -21,7 +21,7 @@ from typing import Dict
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-YAML_PATH = REPO_ROOT / "packages" / "configfuncs" / "src" / "configfuncs" / "configFunctions.yaml"
+YAML_PATH = REPO_ROOT.parent / "customerfunctions" / "configFunctions.yaml"
 EXAMPLES_DIR = REPO_ROOT / "packages" / "elementals" / "src" / "elementals" / "examples"
 TESTS_DIR = REPO_ROOT / "packages" / "elementals" / "tests"
 
